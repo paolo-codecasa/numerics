@@ -4,7 +4,6 @@
 #include<math.h>
 #include<time.h>
 
-//Aufgabe 31
 /*double mc_integrate(gsl_rng* generator, int D, double *R, double integrand(int, double*), int N);
 
 double domain_volume(int D, double *R);
@@ -12,12 +11,10 @@ double domain_volume(int D, double *R);
 
 double standardDeviation(double x[],int N);
 
-//Aufgabe 30
 //double mn_middle_point_integration(double lim[][], double dx, double integrand(double *))
 
 double faculty(double n);
 
-/*Aufgabe22&23 Diffusion*/
 void FTCS_Step(double *y, void *params);
 
 /* Implementations of the error function */

@@ -13,10 +13,6 @@
 #include<lapacke.h>
 
 
-//git commit -m "Abgabe jetzt fertig" --date="25 May 2023 20:00 +0100"
-
-////////////////////////////////////////////////////////////AUFGABE35
-
 double solve_linear_system(lapack_int n){
 
     clock_t begin = clock();
@@ -72,9 +68,8 @@ double solve_linear_system(lapack_int n){
     return time_spent;
 }
 
-////////////////////////////////////////////////////////////AUFGABE31
 
-/*
+
 double mc_integrate(gsl_rng* generator, int D, double *R, double integrand(int, double*), int N){
     //double a = gsl_rng_uniform(generator) //zufällige Zahl in [0,1)
     double x[D];
@@ -121,9 +116,8 @@ double standardDeviation(double x[],int N) {
     return standDev;
 }
 
-////////////////////////////////////////////////////////////AUFGABE30
-//double mn_middle_point_integration(double lim[][], double dx, double integrand(double *)){
-    /*double delta_y = (double) (right-left) / (double) N;
+double mn_middle_point_integration(double lim[][], double dx, double integrand(double *)){
+    double delta_y = (double) (right-left) / (double) N;
 
 double sum = 0.0; 
 
@@ -136,14 +130,13 @@ for (int k=0; k < N; k++){
 }
 
 return sum;
-}*/
+}
 
 double faculty(double n){
     if (n==0) {return 1; }
     else { return n * faculty(n-1); }
 }
 
-////////////////////////////////////////////////////////////AUFGABE23
 
 void FTCS_Step(double *y, void *params){
     //printf("FTCS stepping \n");
@@ -181,7 +174,6 @@ void FTCS_Step(double *y, void *params){
     */
 
     //Von Neumann (keine Änderung am Rand: w=0)
-    //in Aufgabe23 verwendet
     Y_out[0] = y[1]; //far west RB
     Y_out[N-1] = y[N-2]; //far east RB
 
@@ -403,7 +395,7 @@ void rk2_step(double t, double delta_t, double y[], ode_func func, int dimension
   
 }
 
-/*double find_root(double func(double,void*), double x0, double delta, const double rel_tol, const int max_iter,void *params) {
+double find_root(double func(double,void*), double x0, double delta, const double rel_tol, const int max_iter,void *params) {
 
     double x = x0;
     int iteration  = 0;
@@ -434,5 +426,5 @@ double fourietransformationsberechnung(double M,double k, double f(double, void*
         double x = integrate_simpson(-M,M,dx,f,neueparams);
 
         return x;
-}*/
+}
 
